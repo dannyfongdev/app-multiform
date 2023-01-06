@@ -9,7 +9,7 @@ import Step5 from "./components/Step5";
 
 
 function App() {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(3);
 
   const nextStepHandler = () => {
     if (step < 5) {
