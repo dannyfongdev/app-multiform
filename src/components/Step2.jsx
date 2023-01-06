@@ -23,23 +23,19 @@ const ratesMonthly = [
 
 const Plans = ({ selectedId }) => {
   return (
-    <div className="flex flex-col space-y-3 mt-6">
+    <div className="flex flex-col space-y-3 mt-6 md:flex-row md:space-y-0 md:space-x-4">
       {ratesMonthly.map((item) => {
-        let classes;
+        let classes =
+          "flex space-x-4 p-4 border rounded-lg md:flex-col md:justify-between md:w-[138px] md:h-[158px] md:space-x-0";
         if (selectedId === item.id) {
-          classes =
-            "flex space-x-4 p-4 border rounded-lg border-marineBlue bg-magnolia";
-        } else {
-          classes = "flex space-x-4 p-4 border rounded-lg border-lightGray";
+          classes = "border-marineBlue bg-magnolia " + classes;
         }
         return (
-          <div key={item.id}>
-            <div className={classes}>
-              <img src={item.img} alt="{item.name}" />
-              <div className="flex flex-col">
-                <h2 className="text-marineBlue font-semibold">{item.name}</h2> 
-                <p className="text-coolGray text-sm">{item.rate}</p>
-              </div>
+          <div className={classes} key={item.id}>
+            <img className="w-10" src={item.img} alt="{item.name}" />
+            <div>
+              <h2 className="text-marineBlue font-semibold">{item.name}</h2>
+              <p className="text-coolGray text-sm">{item.rate}</p>
             </div>
           </div>
         );
@@ -51,9 +47,9 @@ const Plans = ({ selectedId }) => {
 const Step2 = () => {
   const clickHandler = () => {};
   return (
-    <div className="h-[525px] container mx-auto md:h-[600px]">
-      <div className="w-[340px] mx-auto bg-white rounded-xl -mt-[74px] p-6">
-        <h1 className="text-2xl mb-1 md:text-[33px] font-bold text-marineBlue md:mb-1.5">
+    <div className="h-[525px] container mx-auto md:h-[570px] md:w-[625px]">
+      <div className="w-[340px] mx-auto bg-white rounded-xl -mt-[74px] p-6 md:mt-5 md:w-[440px] md:p-0">
+        <h1 className="text-2xl mb-1 md:text-[33px] font-bold text-marineBlue md:mb-1.5 md:mt-10">
           Select your plan
         </h1>
         <p className="text-coolGray mb-4 md:mb-8">
@@ -79,13 +75,16 @@ const Step2 = () => {
           </label>
         </div>
       </div>
-      <div className="flex justify-between p-4 mt-4 bg-white">
-        <button className="py-2 px-1 text-sm font-semibold text-coolGray" onClick={clickHandler}>
+      <div className="flex justify-between p-4 mt-4 bg-white md:mt-32 md:w-[470px] md:mx-auto">
+        <button
+          className="py-2 px-1 text-sm font-semibold text-coolGray md:text-base"
+          onClick={clickHandler}
+        >
           Go Back
         </button>
 
         <button
-          className="px-6 py-2 bg-marineBlue text-white rounded"
+          className="px-6 py-2 bg-marineBlue text-white rounded md:text-base md:py-3 md:rounded-lg"
           onClick={clickHandler}
         >
           Next Step

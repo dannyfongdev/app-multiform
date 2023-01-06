@@ -10,7 +10,7 @@ const Page = (props) => {
   };
 
   return (
-    <div className="flex flex-col bg-magnolia md:bg-white md:w-[942px] md:flex-row md:justify-center md:p-4 md:rounded-xl" >
+    <div className="flex flex-col bg-magnolia md:bg-white md:flex-row md:justify-center md:p-4 md:rounded-xl" >
       <StepsSidebar step={props.step} />
       {props.children}
     </div>
