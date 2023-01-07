@@ -37,7 +37,7 @@ const StepInfo = (props) => {
 
 const StepsSidebar = ({ step }) => {
   return (
-    <div className="step-sidebar w-[375px] h-[172px] flex justify-center space-x-4 items-start py-8  md:justify-start md:space-x-0 md:space-y-7 md:flex-col md:w-[275px] md:h-[570px] md:rounded-xl md:pt-[40px] md:pl-[30px]">
+    <div className="step-sidebar w-[375px] h-[172px] flex justify-center space-x-4 items-start py-8  md:justify-start md:space-x-0 md:space-y-7 md:flex-col md:w-[275px] md:h-[568px] md:rounded-xl md:pt-[40px] md:pl-[30px]">
       {info.map((item) => (
         <StepInfo step={step} key={item.id} id={item.id} title={item.title} content={item.content} />
       ))}

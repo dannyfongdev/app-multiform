@@ -45,9 +45,8 @@ const Plans = ({ selectedId }) => {
 };
 
 const Step2 = () => {
-  const clickHandler = () => {};
   return (
-    <div className="h-[525px] container mx-auto md:h-[570px] md:w-[625px]">
+    
       <div className="w-[340px] mx-auto bg-white rounded-xl -mt-[74px] p-6 md:mt-5 md:w-[440px] md:p-0">
         <h1 className="text-2xl mb-1 md:text-[33px] font-bold text-marineBlue md:mb-1.5 md:mt-10">
           Select your plan
@@ -75,22 +74,7 @@ const Step2 = () => {
           </label>
         </div>
       </div>
-      <div className="flex justify-between p-4 mt-4 bg-white md:mt-32 md:w-[470px] md:mx-auto">
-        <button
-          className="py-2 px-1 text-sm font-semibold text-coolGray md:text-base"
-          onClick={clickHandler}
-        >
-          Go Back
-        </button>
-
-        <button
-          className="px-6 py-2 bg-marineBlue text-white rounded md:text-base md:py-3 md:rounded-lg"
-          onClick={clickHandler}
-        >
-          Next Step
-        </button>
-      </div>
-    </div>
+    
   );
 };
 

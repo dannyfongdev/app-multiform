@@ -46,29 +46,19 @@ const Step3 = () => {
   const clickHandler = () => {};
 
   return (
-    <div className="relative h-[525px] container mx-auto md:h-[570px] md:w-[625px]">
-      <div className="w-[340px] mx-auto mb-32 bg-white rounded-xl -mt-[74px] p-6 md:mt-5 md:w-[440px] md:p-0">
-        <h1 className="text-2xl mb-1 md:text-[33px] font-bold text-marineBlue md:mb-1.5 md:mt-10">Pick add-ons</h1>
-        <p className="text-coolGray mb-4 md:mb-8">Add-ons help enhance your gaming experience.</p>
-        <div>
-          <div className="container max-w-lg mx-autoflex flex flex-col space-y-4 mt-8 text-[13px]">
-            {addOns.map((item) => (
-              <AddOn key={item.id} addOn={item} />
-            ))}
-          </div>
+    <div className="w-[340px] mx-auto mb-32 bg-white rounded-xl -mt-[74px] p-6 md:mt-5 md:w-[440px] md:p-0">
+      <h1 className="text-2xl mb-1 md:text-[33px] font-bold text-marineBlue md:mb-1.5 md:mt-10">
+        Pick add-ons
+      </h1>
+      <p className="text-coolGray mb-4 md:mb-8">
+        Add-ons help enhance your gaming experience.
+      </p>
+      <div>
+        <div className="container max-w-lg mx-autoflex flex flex-col space-y-4 mt-8 text-[13px]">
+          {addOns.map((item) => (
+            <AddOn key={item.id} addOn={item} />
+          ))}
         </div>
-      </div>
-      <div className="absolute bottom-0 w-full flex justify-between p-4 bg-white text-sm md:text-base md:mx-auto md:px-[90px]">
-        <button className="py-2 text-coolGray font-bold" onClick={clickHandler}>
-          Go Back
-        </button>
-
-        <button
-          className="px-6 py-2 bg-marineBlue text-white rounded"
-          onClick={clickHandler}
-        >
-          Next Step
-        </button>
       </div>
     </div>
   );
