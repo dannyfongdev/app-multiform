@@ -1,4 +1,4 @@
-const StepNav = ({ step, onPrev, onNext }) => {
+const StepNav = ({ step, onPrev, onNext, disabled }) => {
 
   let classes =
     "absolute w-full bottom-0 mx-auto flex justify-between p-4 mt-4 bg-white md:mt-32 md:w-[470px] md:mx-auto md:bottom-3 md:right-24";
@@ -20,8 +20,9 @@ const StepNav = ({ step, onPrev, onNext }) => {
       </button>
 
       <button
-        className="px-6 py-2 bg-marineBlue text-white rounded ml-auto md:text-base md:py-3 md:rounded-lg"
+        className="px-6 py-2 bg-marineBlue text-white rounded ml-auto md:text-base md:py-3 md:rounded-lg disabled:bg-slate-500 hover:bg-purplishBlue"
         onClick={onNext}
+        disabled={disabled}
       >
         Next Step
       </button>

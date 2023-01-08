@@ -12,9 +12,13 @@ import StepsSidebar from "./components/StepsSidebar";
 
 function App() {
   // Current Step State
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
 
   const handleNext = () => {
+    if (step === 1 && !isValidStep1()) {
+      return;
+    }
+
     if (step < 5) {
       setStep((prevStep) => prevStep + 1);
     }
@@ -34,6 +38,13 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
+  const isValidStep1 = () => {
+    if (name.trim() === "") return false;
+    if (!email.includes("@")) return false;
+    if (phone.trim() === "") return false;
+    return true;
+  }
 
   const handleChangeName = (value) => {
     setName(value);
@@ -76,6 +87,7 @@ function App() {
               onChangeName={handleChangeName}
               onChangeEmail={handleChangeEmail}
               onChangePhone={handleChangePhone}
+              onChangeIsValid={boo => console.log(boo)}
             />
           )}
           {step === 2 && (
@@ -95,7 +107,7 @@ function App() {
           )}
           {step === 4 && <Step4 plan={plan} ratePer={ratePer} picks={picks} onChangePlan={goStep2} />}
           {step === 5 && <Step5 />}
-          <StepNav step={step} onPrev={handlePrev} onNext={handleNext} />
+          <StepNav step={step} onPrev={handlePrev} onNext={handleNext} disabled={step===1 && !isValidStep1()}/>
         </StepMain>
       </Page>
     </main>
