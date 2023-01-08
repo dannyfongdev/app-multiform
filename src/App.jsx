@@ -26,6 +26,10 @@ function App() {
     }
   };
 
+  const goStep2 = () => {
+    setStep (2);
+  }
+
   // Step 1 State
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -45,10 +49,10 @@ function App() {
 
   // Step 2 State
   const [plan, setPlan] = useState("Arcade");
-  const [ratePer, setRatePer] = useState("year"); // "month" or "year"
+  const [ratePer, setRatePer] = useState("month"); // "month" or "year"
 
   // Step 3 State
-  const [picks, setPicks] = useState([true, false, false]);
+  const [picks, setPicks] = useState([false, false, false]);
 
   const handlePick = (index, checked) => {
     const newArray = [...picks];
@@ -89,7 +93,7 @@ function App() {
           {step === 3 && (
             <Step3 ratePer={ratePer} picks={picks} onPick={handlePick} />
           )}
-          {step === 4 && <Step4 plan={plan} ratePer={ratePer} picks={picks} />}
+          {step === 4 && <Step4 plan={plan} ratePer={ratePer} picks={picks} onChangePlan={goStep2} />}
           {step === 5 && <Step5 />}
           <StepNav step={step} onPrev={handlePrev} onNext={handleNext} />
         </StepMain>

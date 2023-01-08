@@ -22,9 +22,11 @@ const info = [
 ];
 
 const StepInfo = (props) => {
+  const highlightStyle = " bg-lightBlue text-marineBlue ";
+
   return (
     <div className="flex items-center uppercase text-white">
-      <div className="block w-9 h-9 p-1 rounded-full border border-white text-center align-middle">
+      <div className={"block w-9 h-9 p-1 rounded-full border border-white text-center align-middle" + (props.id === props.step ? highlightStyle : "")}>
         {props.id}
       </div>
       <div className="ml-4 hidden md:block">

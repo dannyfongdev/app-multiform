@@ -58,6 +58,11 @@ const Step4 = (props) => {
     }
   });
 
+  // If user clicks "change" go to step 2
+  const handleClick = () => {
+    props.onChangePlan();
+  };
+
   return (
     <div className="w-[340px] mx-auto mb-32 bg-white rounded-xl -mt-[74px] p-6 md:mt-5 md:w-[440px] md:p-0">
       <h1 className="text-2xl mb-1 md:text-[33px] font-bold text-marineBlue md:mb-1.5 md:mt-10">
@@ -73,7 +78,12 @@ const Step4 = (props) => {
               {props.plan +
                 (props.ratePer === "month" ? " (Monthly)" : " (Yearly)")}
             </h2>
-            <p className="underline hover:cursor-pointer">Change</p>
+            <p
+              onClick={handleClick}
+              className="underline hover:cursor-pointer"
+            >
+              Change
+            </p>
           </div>
           <div className="text-marineBlue font-bold">
             {formatPrice(basePrice)}
