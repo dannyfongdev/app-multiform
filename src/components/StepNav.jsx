@@ -6,7 +6,7 @@ const StepNav = ({ step, onPrev, onNext, disabled }) => {
     classes = "hidden " + classes;
   }
 
-  let classesBack = "py-2 px-1 text-sm font-semibold text-coolGray md:text-base";
+  let classesBack = "py-2 px-1 text-sm font-semibold text-coolGray md:text-base hover:text-purplishBlue";
   if (step === 1) {
     classesBack = "hidden " + classesBack
   }

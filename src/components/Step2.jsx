@@ -29,7 +29,7 @@ const Plans = (props) => {
     <div className="flex flex-col space-y-3 mt-6 md:flex-row md:space-y-0 md:space-x-4">
       {pricingTable.map((item) => {
         let classes =
-          "flex space-x-4 p-4 border rounded-lg md:flex-col md:justify-between md:w-[138px] md:space-x-0 hover:cursor-pointer";
+          "flex space-x-4 p-4 border rounded-lg md:flex-col md:justify-between md:w-[138px] md:space-x-0 hover:cursor-pointer hover:border-marineBlue bg-magnolia";
         if (props.plan === item.name) {
           classes = "border-marineBlue bg-magnolia " + classes;
         }

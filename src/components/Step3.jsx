@@ -23,8 +23,11 @@ const addOns = [
 ];
 
 const AddOn = (props) => {
+
+  const classes = "flex justify-between items-center p-3 border border-coolGray rounded-lg md:text-base md:p-4 hover:border-purplishBlue" + (props.checked ? " bg-magnolia border-purplishBlue" : "")
+  
   return (
-    <div className="flex justify-between items-center p-3 border border-purple-500 rounded-lg md:text-base md:p-4">
+    <div className={classes}>
       <div className="flex space-x-3 items-center md:space-x-5">
         <div>
           <input
