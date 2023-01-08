@@ -1,49 +1,55 @@
 const addOns = [
   {
-    id: 1,
+    id: "service",
     name: "Online service",
     detail: "Access to multiplayer games",
-    rateMonthly: "+$1/mo",
-    rateAnnual: "+$10/yr",
-    checked: true,
+    rate1: "+$1/mo",
+    rate2: "+$10/yr",
   },
   {
-    id: 2,
+    id: "storage",
     name: "Larger storage",
     detail: "Extra 1 TB of cloud save",
-    rateMonthly: "+$2/mo",
-    rateAnnual: "+$20/yr",
-    checked: true,
+    rate1: "+$2/mo",
+    rate2: "+$20/yr",
   },
   {
-    id: 3,
+    id: "profile",
     name: "Customizable profile",
     detail: "Custom theme on your profile",
-    rateMonthly: "+$2/mo",
-    rateAnnual: "+$20/yr",
-    checked: false,
+    rate1: "+$2/mo",
+    rate2: "+$20/yr",
   },
 ];
 
-const AddOn = ({ addOn }) => {
+const AddOn = (props) => {
   return (
     <div className="flex justify-between items-center p-3 border border-purple-500 rounded-lg md:text-base md:p-4">
       <div className="flex space-x-3 items-center md:space-x-5">
         <div>
-          <input id="online" name="online" type="checkbox" />
+          <input
+            name={props.addOn.id}
+            type="checkbox"
+            onChange={(e) => props.onPick(props.index, e.target.checked)}
+            checked={props.checked}
+          />
         </div>
         <div>
-          <h2 className="text-marineBlue font-bold">{addOn.name}</h2>{" "}
-          <p className="text-coolGray">{addOn.detail}</p>
+          <h2 className="text-marineBlue font-bold">{props.addOn.name}</h2>{" "}
+          <p className="text-coolGray">{props.addOn.detail}</p>
         </div>
       </div>
-      <div>{addOn.rateMonthly}</div>
+      <div>
+        {props.ratePer == "month" ? props.addOn.rate1 : props.addOn.rate2}
+      </div>
     </div>
   );
 };
 
-const Step3 = () => {
-  const clickHandler = () => {};
+const Step3 = (props) => {
+  const handlePick = (index, checked) => {
+    props.onPick(index, checked);
+  }
 
   return (
     <div className="w-[340px] mx-auto mb-32 bg-white rounded-xl -mt-[74px] p-6 md:mt-5 md:w-[440px] md:p-0">
@@ -55,8 +61,15 @@ const Step3 = () => {
       </p>
       <div>
         <div className="container max-w-lg mx-autoflex flex flex-col space-y-4 mt-8 text-[13px]">
-          {addOns.map((item) => (
-            <AddOn key={item.id} addOn={item} />
+          {addOns.map((item, index) => (
+            <AddOn
+              key={item.id}
+              addOn={item}
+              ratePer={props.ratePer}
+              onPick={handlePick}
+              index={index}
+              checked={props.picks[index]}
+            />
           ))}
         </div>
       </div>
