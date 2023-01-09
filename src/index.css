@@ -7,13 +7,3 @@ body {
   padding: 0;
   background-color: hsl(217, 100%, 97%);
 }
-
-.step-sidebar {
-  background: url("./images/bg-sidebar-desktop.svg") no-repeat;
-}
-
-@media (max-width: 768px) {
-  .step-sidebar {
-    background: url("./images/bg-sidebar-mobile.svg") no-repeat;
-  }
-}
