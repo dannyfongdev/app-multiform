@@ -5,6 +5,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        'sidebar-desktop': "url('../public/images/bg-sidebar-desktop.svg')",
+        'sidebar-mobile': "url('../public/images/bg-sidebar-mobile.svg')"
+      },
       colors: {
         marineBlue: "hsl(213, 96%, 18%)",
         purplishBlue: "hsl(243, 100%, 62%)",
